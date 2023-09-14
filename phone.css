@@ -1,0 +1,17 @@
+#navbar{
+    flex-direction: column;
+}
+#services{
+    flex-direction: column;
+}
+#client-section{
+    flex-direction: column;
+    overflow: hidden;
+}
+#contact-box{
+    align-items: center;
+    margin-left:80px;
+}
+.flex-img{
+    visibility: hidden;
+}

@@ -1,0 +1,320 @@
+<html>
+    <head>
+        <title>Food delivery</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        :root{
+            --client-sec-bg:rgb(255, 237, 240);
+            --contact-sec-bg:rgb(228, 255, 237);
+            --services-bg:white;
+        }
+        .dark-theme{
+            background-color: black;
+            color: white;
+            --client-sec-bg:black;
+            --contact-sec-bg:black;
+            --services-bg:black;
+        }   
+        .body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .logo-img{
+            border-radius: 50%;
+            width:120px;
+            margin: 20px;
+        }
+        #navbar{
+            display: flex;
+            align-items: center;
+        }
+        #logo{
+            margin-left:50px;
+            margin-right:50px;
+            transform: scale(1.2); 
+            transition: 2s ease-in-out;
+        }   
+        #navbar ul li a{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            display: block;
+            padding: 3px 22px;
+            border-radius: 30px;
+        }
+        #navbar ul li a:hover{
+            color: black;
+            background-color: rgb(255, 255, 255);
+            opacity: 0.8;
+        }
+        #navbar ul{
+            display: flex;
+        }
+        #navbar ul li{
+            list-style: none;
+            font-size: 1.3rem;
+        }
+        #navbar::before{
+            content: "";
+            position: absolute;
+            background-color: black;
+            height:100px;
+            width: 100%;
+            z-index:-1;
+            opacity: 0.4;
+        } 
+        #home{
+           display: flex;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           flex-direction: column;
+           padding: 3px 200px;
+           height: 400px;
+           justify-content: center;
+           align-items: center;
+        }
+        #home::before{
+            content: "";
+            position: absolute;
+            background:url('spaghetti-1932466_1280.jpg');
+            margin-top: -30px;
+            height:700px;
+            width: 100%;
+            z-index:-1; 
+            opacity: 0.8;
+        }
+        #home h1{
+            color: white;
+            text-align: center;
+        }
+        .h-primary{
+            font-size: 3.8rem;
+            padding: 12px;
+        }
+        #home p{
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        #order{
+            padding: 6px 20px;
+            border: 2px solid white;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            margin-top: 17px;
+            cursor: pointer;
+        }
+        .services-container{
+            margin-top: 50px;
+            background-color: var(--services-bg);
+        }
+        #services{
+            display: flex;
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        .box{
+            display: flex;
+            flex-direction:column;
+            column-gap: 20px;
+            justify-content:space-around;
+            border-color: black;
+            background-color: rgb(255, 216, 223);
+            color: black;
+            border-radius: 60px;
+            padding: 40px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 40px;
+        }
+        .box:hover{
+            transform: scale(1.2); 
+            transition: 2s ease-in-out;
+        }
+        .img{
+            align-items: center;
+            width: 200px;
+            border-radius: 20px;
+        }
+        .client-section{
+            margin-top: 70px;
+            height: 350px;
+            background-color: var(--client-sec-bg);
+            margin-bottom:50px; 
+        }
+        .client-img-class{
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .client-img{
+            width: 100px;
+            height: 100px;
+        }
+        #contact{
+            position: relative;
+        }
+        #contact::before{
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--contact-sec-bg);
+        }
+        footer{
+            z-index: -1;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #contact-box{
+            margin-top: 60px;
+            width:500px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 34px;
+        }
+        #contact-box input{
+            margin-top: 10px;
+            width:350px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+        }
+        #contact-box form{
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+        }
+        #contact-box label{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2rem;
+        }
+        .form-group{
+            margin-bottom: 20px;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+        }
+        </style>
+        <link rel="stylesheet" media="screen and (max-width:1070px)" href="phone.css">
+    </head>
+    <body id="theme-toggle">
+      <nav id="navbar">
+        <div id="logo">
+            <img src="logo.webp" alt="MyOnlineMeal.com" class="logo-img">
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Services</a></li>
+            <li class="item"><a href="#">About Us</a></li>
+            <li class="item"><a href="#">Contact Us</a></li>
+            <li class="item"><a href="#" id="icon">Theme</a></li>
+        </ul>
+      </nav> 
+      
+      <section id="home">
+        <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
+            elit. Autem quam quae aut ratione labore laborum enim 
+        </p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
+            elit.
+        </p>
+            <button id="order">Order Now</button>
+        </section>
+        <section class="services-container">
+            <h1 class="h-primary center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><center>Our Services</center></h1>
+            <div id="services">
+                <div class="box" style="margin-right: 50px;">
+                    <img src="pizza .jpg" class="img" style="height: 120px;">
+                    <h2 class="h-secondary center" style="margin-top: 10px;">Food Ordering</h2>
+                    <p style="margin-top: 10px; font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Similique, ullam neque! Placeat a quis repellendus non ut,
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum molestiae hic a rem, 
+                        corrupti nemo cupiditate, dolore maiores magni explicabo minima id consectetur? 
+                        minima magnam molestias nulla doloremque nostrum ab officia
+                         animi iusto suscipit molestiae nemo.</p>
+                </div>
+                <div class="box" style="margin-right: 50px;">
+                    <img src="bilkfood.jpg" class="img">
+                    <h2 class="h-secondary center" style="margin-top: 10px;">Bulk Ordering</h2>
+                    <p style="margin-top: 10px;font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Similique, ullam neque! Placeat a quis repellendus non ut Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit blanditiis ducimus maiores accusantium, velit harum dolores voluptate illum repellendus qui nulla debitis beatae?
+                        minima magnam molestias nulla doloremque nostrum ab officia
+                         animi iusto suscipit molestiae nemo.</p>
+                </div>
+                <div class="box">
+                    <img src="3672341.jpg" class="img" style="height: 120px;width: 150px;">
+                    <h2 class="h-secondary center" style="margin-top: 10px;">Food Delivery</h2>
+                    <p style="margin-top: 10px;font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Similique, ullam neque! Placeat a quis repellendus non ut, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium corporis similique voluptatem quos! Mollitia, temporibus voluptatum. Error iure voluptate eligendi nemo nesciunt aspernatur!
+                        minima magnam molestias nulla doloremque nostrum ab officia
+                         animi iusto suscipit molestiae nemo.</p>
+                </div>
+            </div>
+        </section>
+        <section class="client-section">
+            <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 60px;padding-top: 30px"><center>Our Clients</center></h1>
+            <div class="client-img-class">
+                <img src="skype.webp" class="client-img" style="width: 200px;">
+                <img src="apple-logo.jpg" class="client-img" style="width: 100px;">
+                <img src="microsoft.webp" class="client-img">
+                <img src="amazon.webp" class="client-img"style="width: 200px;">
+                <img src="hp-logo.webp" class="client-img">
+            </div>
+        </section>
+        <section id="contact">
+            <h1 class="h-primary center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><center>Contact Us</center></h1>
+            <div class="flex">
+            <div id="contact-box" class="form" style="justify-content: center;align-items: center;">
+                <form action="" style="justify-content: center;align-items: center;">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="name"
+                        placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="text" name="email" id="email"
+                        placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="num">Phone Number: </label>
+                        <input type="text" name="num" id="num"
+                        placeholder="Enter your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="num">Message: </label>
+                        <input type="text" name="message" id="num">
+                    </div>
+                </form>
+            </div>
+            <div style="margin-top: 40px;" class="flex-img">
+                <img src="bulk.jpg" style="width: 600px;height: 400px;">
+            </div>
+            </div>
+        </section>
+        <footer>
+            <div class="center">
+                Copyright &copy; www.myOnlineMeal.com. All rights Reserved
+            </div>
+        </footer>
+    </body>
+    <script>
+        const Icon = document.getElementById('icon');
+        const body = document.getElementById('theme-toggle');
+        function toggleDarkTheme() {
+            body.classList.toggle('dark-theme'); // Toggle the dark-theme class
+        }
+        Icon.addEventListener('click', toggleDarkTheme);
+    </script>
+</html>
